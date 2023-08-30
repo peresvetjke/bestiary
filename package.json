@@ -1,0 +1,11 @@
+{
+  "name": "bestiary",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:peresvetjke/bestiary.git",
+  "author": "Udalov Igor <i.udalov@rambler-co.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn install --check-files"
+  }
+}
