@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>Leprosoria</h1>
+    <%= link_to "New leprosorium",
+                new_leprosorium_path,
+                class: "btn btn--primary" %>
+  </div>
+
+  <%= render @leprosoria %>
+</main>

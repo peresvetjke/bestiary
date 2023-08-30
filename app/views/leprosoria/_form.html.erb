@@ -1,0 +1,10 @@
+<%= simple_form_for leprosorium, html: { class: "leprosorium form" } do |f| %>
+  <% if leprosorium.errors.any? %>
+    <div class="error-message">
+      <%= leprosorium.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :title, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="leprosorium">
+  <%= link_to leprosorium.title, leprosorium_path(leprosorium) %>
+  <div class="leprosorium__actions">
+    <%= button_to "Delete",
+                  leprosorium_path(leprosorium),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_leprosorium_path(leprosorium),
+                class: "btn btn--light" %>
+  </div>
+</div>

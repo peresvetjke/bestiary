@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to leprosorium"), leprosorium_path(@leprosorium) %>
+
+  <div class="header">
+    <h1>Edit leprosorium</h1>
+  </div>
+
+  <%= render "form", leprosorium: @leprosorium %>
+</main>

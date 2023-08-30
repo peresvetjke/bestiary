@@ -81,3 +81,5 @@ end
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'importmap-rails', '~> 1.2'
+
+gem 'simple_form'
