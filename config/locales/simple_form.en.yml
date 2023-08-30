@@ -6,12 +6,11 @@ en:
     labels:
       leprosorium:
         title: Title
-
-    helpers:
-      submit:
-        leprosorium:
-          create: Create leprosorium
-          update: Update leprosorium
+  helpers:
+    submit:
+      leprosorium:
+        create: Create leprosorium
+        update: Update leprosorium
 
     "yes": 'Yes'
     "no": 'No'

@@ -11,7 +11,7 @@ feature 'User can manage leprosoria list.', js: true do # rubocop:disable Metric
     click_on 'New leprosorium'
     expect(page).to have_selector 'h1', text: 'New leprosorium'
     fill_in 'Title', with: 'My first leprosorium'
-    click_on 'Create Leprosorium'
+    click_on 'Create leprosorium'
     expect(page).to have_selector 'h1', text: 'Leprosoria'
     expect(page).to have_content 'My first leprosorium'
   end
@@ -30,7 +30,7 @@ feature 'User can manage leprosoria list.', js: true do # rubocop:disable Metric
     expect(page).to have_selector 'h1', text: 'Edit leprosorium'
 
     fill_in 'Title', with: 'Updated leprosorium'
-    click_on 'Update Leprosorium'
+    click_on 'Update leprosorium'
 
     expect(page).to have_selector 'h1', text: 'Leprosoria'
     expect(page).to have_content 'Updated leprosorium'
