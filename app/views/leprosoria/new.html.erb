@@ -5,5 +5,7 @@
     <h1>New leprosorium</h1>
   </div>
 
-  <%= render "form", leprosorium: @leprosorium %>
+  <%= turbo_frame_tag @leprosorium do %>
+    <%= render "form", leprosorium: @leprosorium %>
+  <% end %>
 </main>

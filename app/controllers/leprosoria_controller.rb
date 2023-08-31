@@ -4,7 +4,7 @@ class LeprosoriaController < ApplicationController
   before_action :set_leprosorium, only: %i[show edit update destroy]
 
   def index
-    @leprosoria = Leprosorium.all
+    @leprosoria = Leprosorium.ordered
   end
 
   def show; end
@@ -17,9 +17,12 @@ class LeprosoriaController < ApplicationController
     @leprosorium = Leprosorium.new(leprosorium_params)
 
     if @leprosorium.save
-      redirect_to leprosoria_path, notice: 'Leprosorium was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully created.' }
+        format.turbo_stream
+      end
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,13 +32,17 @@ class LeprosoriaController < ApplicationController
     if @leprosorium.update(leprosorium_params)
       redirect_to leprosoria_path, notice: 'Leprosorium was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @leprosorium.destroy
-    redirect_to leprosoria_path, notice: 'Leprosorium was successfully destroyed.'
+
+    respond_to do |format|
+      format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully destroyed.' }
+      format.turbo_stream
+    end
   end
 
   private

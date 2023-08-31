@@ -3,8 +3,13 @@
     <h1>Leprosoria</h1>
     <%= link_to "New leprosorium",
                 new_leprosorium_path,
-                class: "btn btn--primary" %>
+                class: "btn btn--primary",
+                data: { turbo_frame: "new_leprosorium" } %>
   </div>
 
-  <%= render @leprosoria %>
+  <%= turbo_frame_tag Leprosorium.new %>
+
+  <%= turbo_frame_tag "leprosoria" do %>
+    <%= render @leprosoria %>
+  <% end %>
 </main>
