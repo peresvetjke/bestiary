@@ -8,5 +8,5 @@ class Leprosorium < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
-  broadcasts_to ->(leprosoria) { 'leprosoria' }, inserts_by: :prepend
+  broadcasts_to ->(_leprosoria) { 'leprosoria' }, inserts_by: :prepend
 end
