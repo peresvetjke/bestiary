@@ -8,7 +8,5 @@ class Leprosorium < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
-  after_create_commit -> { broadcast_prepend_later_to "leprosoria" }
-  after_update_commit -> { broadcast_replace_later_to "leprosoria" }
-  after_destroy_commit -> { broadcast_remove_to "leprosoria" }
+  broadcasts_to ->(leprosoria) { 'leprosoria' }, inserts_by: :prepend
 end
