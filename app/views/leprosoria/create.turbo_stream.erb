@@ -1,2 +1,3 @@
 <%= turbo_stream.prepend "leprosoria", @leprosorium %>
 <%= turbo_stream.update Leprosorium.new, "" %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

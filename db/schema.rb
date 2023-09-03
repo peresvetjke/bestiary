@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_03_153942) do
   end
 
   create_table "disclaimers", force: :cascade do |t|
-    t.string "text", limit: 100
+    t.string "text"
     t.bigint "leprosorium_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_03_153942) do
   end
 
   create_table "leprosoria", force: :cascade do |t|
-    t.string "title", limit: 30
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_leprosoria_on_title", unique: true

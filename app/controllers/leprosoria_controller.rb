@@ -19,7 +19,7 @@ class LeprosoriaController < ApplicationController
     if @leprosorium.save
       respond_to do |format|
         format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully created.' }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = "Leprosorium was successfully created." }
       end
     else
       render :new, status: :unprocessable_entity
@@ -30,7 +30,10 @@ class LeprosoriaController < ApplicationController
 
   def update
     if @leprosorium.update(leprosorium_params)
-      redirect_to leprosoria_path, notice: 'Leprosorium was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully updated.' }
+        format.turbo_stream { flash.now[:notice] = 'Leprosorium was successfully updated.' }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,7 +44,7 @@ class LeprosoriaController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully destroyed.' }
-      format.turbo_stream
+      format.turbo_stream { flash.now[:notice] = 'Leprosorium was successfully destroyed.' }
     end
   end
 
