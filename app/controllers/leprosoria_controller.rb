@@ -17,9 +17,10 @@ class LeprosoriaController < ApplicationController
     @leprosorium = Leprosorium.new(leprosorium_params)
 
     if @leprosorium.save
+      message = 'Leprosorium was successfully created.'
       respond_to do |format|
-        format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully created.' }
-        format.turbo_stream { flash.now[:notice] = "Leprosorium was successfully created." }
+        format.html { redirect_to leprosoria_path, notice: message }
+        format.turbo_stream { flash.now[:notice] = message }
       end
     else
       render :new, status: :unprocessable_entity
@@ -30,9 +31,10 @@ class LeprosoriaController < ApplicationController
 
   def update
     if @leprosorium.update(leprosorium_params)
+      message = 'Leprosorium was successfully updated.'
       respond_to do |format|
-        format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully updated.' }
-        format.turbo_stream { flash.now[:notice] = 'Leprosorium was successfully updated.' }
+        format.html { redirect_to leprosoria_path, notice: message }
+        format.turbo_stream { flash.now[:notice] = message }
       end
     else
       render :edit, status: :unprocessable_entity
@@ -42,9 +44,10 @@ class LeprosoriaController < ApplicationController
   def destroy
     @leprosorium.destroy
 
+    message = 'Leprosorium was successfully destroyed.'
     respond_to do |format|
-      format.html { redirect_to leprosoria_path, notice: 'Leprosorium was successfully destroyed.' }
-      format.turbo_stream { flash.now[:notice] = 'Leprosorium was successfully destroyed.' }
+      format.html { redirect_to leprosoria_path, notice: message }
+      format.turbo_stream { flash.now[:notice] = message }
     end
   end
 
